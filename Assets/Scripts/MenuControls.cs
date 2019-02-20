@@ -4,9 +4,17 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 
 public class MenuControls : MonoBehaviour {
+    public GameObject player;
+
+    public void ContinuePressed()
+    {
+        SceneManager.LoadScene("LoadingScene");
+    }
+
     public void NewPressed()
     {
-        SceneManager.LoadScene("Game");
+        player.GetComponent<Player>().flag = 0;
+        SceneManager.LoadScene("LoadingScene");
     }
 
     public void ExitPressed()
